@@ -9,7 +9,7 @@ M.general = {
     ["<C-e>"] = { "<End>", "End of line" },
 
     -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "Move left" },
+    -- ["<C-h>"] = { "<Left>", "Move left" },
     ["<C-l>"] = { "<Right>", "Move right" },
     ["<C-j>"] = { "<Down>", "Move down" },
     ["<C-k>"] = { "<Up>", "Move up" },
@@ -198,6 +198,12 @@ M.lspconfig = {
         vim.diagnostic.open_float { border = "rounded" }
       end,
       "Floating diagnostic",
+    },
+    ["gl"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "Floating diagnostic"
     },
 
     ["[d"] = {

@@ -1,5 +1,5 @@
 dofile(vim.g.base46_cache .. "lsp")
-require "nvchad.lsp"
+require "nvchad.lsp" 
 
 local M = {}
 local utils = require "core.utils"
@@ -40,7 +40,45 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+local lspconfig = require("lspconfig")
+
+local servers = {
+  "html",
+  "cssls",
+  "tailwindcss",
+  "eslint",
+  "gopls",
+}
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = M.on_attach,
+    on_init = M.on_init,
+    capabilities = M.capabilities,
+  }
+end
+
+local function organize_imports() 
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name}
+  }
+end
+
+lspconfig.tsserver.setup {
+  on_attach = M.on_attach,
+  on_init = M.on_init,
+  capabilities = M.capabilities,
+  command = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
+  }
+}
+
+
+lspconfig.lua_ls.setup {
   on_init = M.on_init,
   on_attach = M.on_attach,
   capabilities = M.capabilities,

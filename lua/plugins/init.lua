@@ -124,6 +124,19 @@ local default_plugins = {
     end,
   },
 
+  {
+    "nvimtools/none-ls.nvim",
+    -- event = "VeryLazy",
+    opts = function()
+      return require("plugins.configs.null-ls")
+    end,
+    dependencies = {
+      {
+        "nvim-lua/plenary.nvim",
+      }
+    }
+  },
+
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
@@ -175,12 +188,12 @@ local default_plugins = {
   {
     "numToStr/Comment.nvim",
     keys = {
-      { "gcc", mode = "n", desc = "Comment toggle current line" },
-      { "gc", mode = { "n", "o" }, desc = "Comment toggle linewise" },
-      { "gc", mode = "x", desc = "Comment toggle linewise (visual)" },
-      { "gbc", mode = "n", desc = "Comment toggle current block" },
-      { "gb", mode = { "n", "o" }, desc = "Comment toggle blockwise" },
-      { "gb", mode = "x", desc = "Comment toggle blockwise (visual)" },
+      { "gcc", mode = "n",          desc = "Comment toggle current line" },
+      { "gc",  mode = { "n", "o" }, desc = "Comment toggle linewise" },
+      { "gc",  mode = "x",          desc = "Comment toggle linewise (visual)" },
+      { "gbc", mode = "n",          desc = "Comment toggle current block" },
+      { "gb",  mode = { "n", "o" }, desc = "Comment toggle blockwise" },
+      { "gb",  mode = "x",          desc = "Comment toggle blockwise (visual)" },
     },
     init = function()
       require("core.utils").load_mappings "comment"
