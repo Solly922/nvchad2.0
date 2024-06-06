@@ -24,7 +24,7 @@ null_ls.setup {
     -- },
     require "none-ls.diagnostics.eslint_d",
     require "none-ls.code_actions.eslint_d",
-    require "none-ls.diagnostics.eslint",
+    -- require "none-ls.diagnostics.eslint",
 
     builtins.formatting.goimports,
     builtins.formatting.gofumpt,

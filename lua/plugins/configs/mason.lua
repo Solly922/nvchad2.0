@@ -1,5 +1,6 @@
 local options = {
   ensure_installed = {
+    -- lua
     "lua-language-server",
     "stylua",
 
@@ -17,7 +18,7 @@ local options = {
     "gofumpt",
     "goimports",
     "gopls",
-    "golangci-lint-langserver"
+    "golangci-lint-langserver",
   }, -- not an option from mason.nvim
 
   PATH = "skip",
