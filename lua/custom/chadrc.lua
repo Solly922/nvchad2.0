@@ -9,7 +9,7 @@ M.ui = {
   lsp_semantic_tokens = true,
   statusline = {
     theme = "minimal",
-    separator_style = "arrow",
+    separator_style = "round",
   },
 }
 
