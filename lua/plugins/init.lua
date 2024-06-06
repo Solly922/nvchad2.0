@@ -126,15 +126,18 @@ local default_plugins = {
 
   {
     "nvimtools/none-ls.nvim",
-    -- event = "VeryLazy",
-    opts = function()
-      return require("plugins.configs.null-ls")
+    event = "VeryLazy",
+    -- opts = function()
+    --   return require "plugins.configs.null-ls"
+    -- end,
+    config = function()
+      require "plugins.configs.null-ls"
     end,
     dependencies = {
       {
-        "nvim-lua/plenary.nvim",
-      }
-    }
+        "nvimtools/none-ls-extras.nvim",
+      },
+    },
   },
 
   -- load luasnips + cmp related in insert mode only

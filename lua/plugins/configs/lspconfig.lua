@@ -1,5 +1,5 @@
 dofile(vim.g.base46_cache .. "lsp")
-require "nvchad.lsp" 
+require "nvchad.lsp"
 
 local M = {}
 local utils = require "core.utils"
@@ -58,11 +58,13 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-local function organize_imports() 
+local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = {vim.api.nvim_buf_get_name}
+    arguments = { vim.api.nvim_buf_get_name }
   }
+
+  return params
 end
 
 lspconfig.tsserver.setup {

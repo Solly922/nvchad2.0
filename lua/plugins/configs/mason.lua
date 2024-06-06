@@ -4,6 +4,8 @@ local options = {
     "stylua",
 
     -- web dev
+    "html-lsp",
+    "cssls",
     "eslint-lsp",
     "eslint_d",
     "prettier",
