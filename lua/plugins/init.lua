@@ -254,6 +254,21 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+
+  -- AI
+  {
+    "github/copilot.vim",
+    cmd = "Copilot",
+    config = function()
+      require("configs.copilot").config_vim()
+    end,
+  },
+
+  -- Wakatime
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
+  },
 }
 
 local config = require("core.utils").load_config()
