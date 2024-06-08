@@ -19,3 +19,13 @@ end, { desc = "buffer goto next" })
 map({ "n", "v" }, "<leader>w", "<cmd>w<CR>", { desc = "file save" })
 
 map("i", "<C-H>", "<C-W>")
+
+--
+-- Copilot
+--
+map({ "n", "v" }, "<leader>ae", "<cmd>Copilot enable<cr>", { desc = "Enable Copilot" })
+map({ "n", "v" }, "<leader>ad", "<cmd>Copilot disable<cr>", { desc = "Disable Copilot" })
+map({ "n", "v" }, "<leader>ar", "<cmd>Copilot reload<cr>", { desc = "Reload Copilot" })
+map({ "n", "v" }, "<leader>ap", "<cmd>Copilot panel<cr>", { desc = "Open Copilot panel" })
+map({ "n", "v" }, "<leader>aS", "<cmd>Copilot status<cr>", { desc = "Copilot status" })
+map({ "n", "v" }, "<leader>av", "<cmd>Copilot version<cr>", { desc = "Copilot version" })

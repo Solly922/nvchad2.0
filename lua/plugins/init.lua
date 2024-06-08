@@ -260,8 +260,9 @@ local default_plugins = {
     "github/copilot.vim",
     cmd = "Copilot",
     config = function()
-      require("configs.copilot").config_vim()
+      require("plugins.configs.copilot").config_vim()
     end,
+    event = "BufEnter",
   },
 
   -- Wakatime

@@ -7,8 +7,8 @@ end
 -- Config
 --
 Copilot.config_vim = function()
-  local cmp = require "nvim-cmp"
-  cmp.experimental.ghost_text = false
+  -- local cmp = require "nvim-cmp"
+  -- cmp.experimental.ghost_text = false
 
   vim.g.copilot_filetypes = { xml = false, markdown = false }
 
