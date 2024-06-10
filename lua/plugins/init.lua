@@ -270,6 +270,15 @@ local default_plugins = {
     "wakatime/vim-wakatime",
     lazy = false,
   },
+
+  -- Autotag
+  {
+    "windwp/nvim-ts-autotag",
+    -- event = "BufRead",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
