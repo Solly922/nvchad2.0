@@ -274,7 +274,7 @@ local default_plugins = {
   -- Autotag
   {
     "windwp/nvim-ts-autotag",
-    -- event = "BufRead",
+    event = "BufRead",
     config = function()
       require("nvim-ts-autotag").setup()
     end,
