@@ -256,11 +256,22 @@ local default_plugins = {
   },
 
   -- AI
+  -- {
+  --   "github/copilot.vim",
+  --   cmd = "Copilot",
+  --   config = function()
+  --     require("plugins.configs.copilot").config_vim()
+  --   end,
+  --   -- event = "BufEnter",
+  -- },
+
   {
-    "github/copilot.vim",
-    cmd = "Copilot",
+    "supermaven-inc/supermaven-nvim",
+    cmd = {
+      "SupermavenStart",
+    },
     config = function()
-      require("plugins.configs.copilot").config_vim()
+      require("supermaven-nvim").setup {}
     end,
     event = "BufEnter",
   },
