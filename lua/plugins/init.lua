@@ -199,8 +199,12 @@ local default_plugins = {
       require("core.utils").load_mappings "comment"
     end,
     config = function(_, opts)
-      require("Comment").setup(opts)
+      -- require("Comment").setup(opts)
+      require("plugins.configs.comment").setup(opts)
     end,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
   },
 
   -- file managing , picker etc
