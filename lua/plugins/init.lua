@@ -295,6 +295,12 @@ local default_plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
+
+  {
+    "RRethy/vim-illuminate",
+    event = "User FileOpened",
+    enabled = true,
+  },
 }
 
 local config = require("core.utils").load_config()
