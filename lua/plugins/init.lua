@@ -137,6 +137,26 @@ local default_plugins = {
     },
   },
 
+  -- Go
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap",
+    },
+    build = function()
+      vim.cmd.GoInstallDeps()
+    end,
+    config = function()
+      require("plugins.configs.gopher").setup()
+    end,
+    --@type gopher.Config
+    opts = {},
+  },
+  "leoluz/nvim-dap-go",
+
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",

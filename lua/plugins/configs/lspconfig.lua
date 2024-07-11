@@ -40,7 +40,7 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
 
 local servers = {
   "html",
@@ -48,6 +48,7 @@ local servers = {
   "tailwindcss",
   "eslint",
   "gopls",
+  "golangci_lint_ls",
 }
 
 for _, lsp in ipairs(servers) do
@@ -61,7 +62,7 @@ end
 local function organize_imports()
   local params = {
     command = "_typescript.organizeImports",
-    arguments = { vim.api.nvim_buf_get_name }
+    arguments = { vim.api.nvim_buf_get_name },
   }
 
   return params
@@ -74,11 +75,10 @@ lspconfig.tsserver.setup {
   command = {
     OrganizeImports = {
       organize_imports,
-      description = "Organize Imports"
-    }
-  }
+      description = "Organize Imports",
+    },
+  },
 }
-
 
 lspconfig.lua_ls.setup {
   on_init = M.on_init,
@@ -99,6 +99,24 @@ lspconfig.lua_ls.setup {
         },
         maxPreload = 100000,
         preloadFileSize = 10000,
+      },
+    },
+  },
+}
+
+lspconfig.gopls.setup {
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  settings = {
+    gopls = {
+      usePlaceholders = true,
+      gofumpt = true,
+      codelenses = {
+        generate = false,
+        gc_details = true,
+        test = true,
+        tidy = true,
       },
     },
   },
