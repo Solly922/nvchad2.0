@@ -12,6 +12,7 @@ null_ls.setup {
         "--print-width=80",
         "--single-attribute-per-line",
         "--trailing-comma=es5",
+        "--tab-width=2",
       },
     },
     -- {
