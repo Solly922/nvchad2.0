@@ -23,7 +23,11 @@ null_ls.setup {
     --     "--print-width=80",
     --   },
     -- },
-    require "none-ls.diagnostics.eslint_d",
+    require("none-ls.diagnostics.eslint_d").with {
+      condition = function(utils)
+        return utils.root_has_file { ".eslintrc.js", "eslintrc.cjs", ".eslintrc.json", ".eslintrc" }
+      end,
+    },
     require "none-ls.code_actions.eslint_d",
     -- require "none-ls.diagnostics.eslint",
 
