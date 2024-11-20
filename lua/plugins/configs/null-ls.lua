@@ -31,6 +31,8 @@ null_ls.setup {
     require "none-ls.code_actions.eslint_d",
     -- require "none-ls.diagnostics.eslint",
 
+    builtins.formatting.rustywind,
+
     builtins.formatting.goimports,
     builtins.formatting.gofumpt,
   },

@@ -13,6 +13,7 @@ local options = {
     "prettierd",
     "typescript-language-server",
     "tailwindcss-language-server",
+    "rustywind",
 
     -- golang
     "gofumpt",
