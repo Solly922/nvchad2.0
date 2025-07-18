@@ -121,5 +121,18 @@ lspconfig.gopls.setup {
     },
   },
 }
+--
+-- lspconfig.golangci_lint_ls.setup {
+--   on_init = M.on_init,
+--   on_attach = M.on_attach,
+--   capabilities = M.capabilities,
+--   settings = {
+--     golangci_lint_ls = {
+--       filetypes = { "go" },
+--       command = "golangci-lint",
+--       args = { "run", "--output.json.path=stdout", "--show-stats=false" },
+--     },
+--   },
+-- }
 
 return M
