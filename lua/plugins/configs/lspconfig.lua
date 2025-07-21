@@ -121,7 +121,7 @@ lspconfig.gopls.setup {
     },
   },
 }
---
+
 -- lspconfig.golangci_lint_ls.setup {
 --   on_init = M.on_init,
 --   on_attach = M.on_attach,
